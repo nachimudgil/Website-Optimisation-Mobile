@@ -1,3 +1,45 @@
+Feat: Created an optimised website with a few pages that ran at 60 fps and minimised the Critical Rendering Path so that it loaded quickly and with no errors across a range of devices.
+
+Docs: Added a description for the project.
+
+    Description:
+    ## Website Performance Optimization portfolio project: My code
+
+The goal of this project was to optimise a given website in such a way that it gained a score of 90 or higher on Pagespeed Insights, and ran at 60 fps.
+
+1: Optimisation of Pagespeed on index.html
+
+-Optimisations:
+    -PageSpeed is at 90 and higher
+    -Critical Rendering Path improved for faster load times
+
+-Changes to make optimisations:
+    -CSS and JS was inlined wherever possible to minimise loading from external files
+    -CSS for above-fold rendering moved to style tags at beginning, the rest was added after it rendered by section of javascript added at the end of the body section. 
+    -The print css was marked as media="print" to prevent the page from waiting to load it before constructing the render tree.
+    -JS that didn't affect construction of page were marked as async
+    -Minifed CSS and JS files and used them as primary links to reduce loading
+
+2: Optimisation of 60 fps in pizza.html
+
+This was much more challenging to do.
+
+-Opmisations:
+    -Page runs at 60 fps on a variety of devices, used in real life and by way of emulators
+    -Used primarily Chrome Dev Tools, particularly Timeline to identify problems and check for fixes
+
+-CHanges to make optimisations:
+    -In main.js reduced the scripting time by not using querySelectorAll() and instead using documents.getElementsByClassName(); this is a much faster scripting technique to access DOM elements
+    -Moved the phase calculation outside the loop since it will always only create 5 unique phases and we dont have to do it for every pizza element.
+    -Optimized the function updatePositions() to calculate values outside the loop, preventing constant variable declaration and recalculation for every pizza element where possible.
+    -Additional function included to recalculate pizza number in background whenever needed, and add them if required. Those that are visible in the viewport only are animated.
+    -Testing on emulators and devices other than home computers caused refactoring of code to be simpler and more minified wherever possible, as during testing sometimes lag was found to be a result of too much code performing one task when simple statements could've solved it.
+    
+
+From here onwards is the original readme provided by Udacity for reference.
+
+  
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
