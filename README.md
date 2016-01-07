@@ -2,8 +2,8 @@ Feat: Created an optimised website with a few pages that ran at 60 fps and minim
 
 Docs: Added a description for the project.
 
-    Description:
-    ## Website Performance Optimization portfolio project: My code
+Description:
+## Website Performance Optimization portfolio project: My code
 
 The goal of this project was to optimise a given website in such a way that it gained a score of 90 or higher on Pagespeed Insights, and ran at 60 fps.
 
